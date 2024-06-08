@@ -6,8 +6,16 @@ intentos = 3
 
 while contraseña != confirmacion:
     print("Las contraseñas no coinciden.")
+    intentos -= 1
+    print(f"Le quedan {intentos} intentos.")
+    
+    if intentos == 0:
+        print("Cuenta bloqueada")
+        break
+    
     contraseña = input("Ingrese de nuevo la contraseña:\n")
     confirmacion = input("Confirme la contraseña:\n")
 
-print("Las contraseñas coinciden.")
+else:
+    print("Las contraseñas coinciden.")
     
