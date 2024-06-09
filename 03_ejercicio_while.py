@@ -21,12 +21,13 @@ dict_opciones = {1 : "calcula la raíz cuadrada de la suma de A y B", 2 : "calcu
 print(f"Escogiste la opción {opcion}: {dict_opciones[opcion]}")
 
 
-salida = input("Para salir escribe 'SAL', de lo contrario preciona cualquier tecla\n")
+salida = input("Para salir escribe 'SAL', de lo contrario presiona cualquier tecla\n")
 
 if salida != "SAL":
     print("Sigue la ejecución.")
 
     print("Ahora vamos a ingresar los números para operar: ")
+    
     num1 = int(input("Ingresa el número A:\n"))
 
     while num1 == 0:
@@ -49,11 +50,10 @@ if salida != "SAL":
     elif opcion == 2:
         resultado = num1 / num2
         print(f"El resultado de dividir {num1} entre {num2} es igual a {resultado}")
+        
     else:
         resultado = (num1 * num2) / 2.5
         print(f"El resultado de multiplicar {num1} por {num2} y dividirlo entre 2.5 es igual a {resultado}")
-
-
 
 else:
     print("Calculadora apagada")
