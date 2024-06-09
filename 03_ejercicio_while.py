@@ -1,3 +1,4 @@
+import math
 # Vamos a diseñar una calculadora que se enciende y hasta que no tecleamos 'SAL' no se apaga.
 
 # Esta calculadora funciona de la siguiente manera:
@@ -19,22 +20,41 @@ dict_opciones = {1 : "calcula la raíz cuadrada de la suma de A y B", 2 : "calcu
 
 print(f"Escogiste la opción {opcion}: {dict_opciones[opcion]}")
 
-print("Para salir escribe 'SAL'")
+
+salida = input("Para salir escribe 'SAL', de lo contrario preciona cualquier tecla\n")
+
+if salida != "SAL":
+    print("Sigue la ejecución.")
+
+    print("Ahora vamos a ingresar los números para operar: ")
+    num1 = int(input("Ingresa el número A:\n"))
+
+    while num1 == 0:
+        num1 = int(input(f"{num1} no es una opción válida. Escoge un número diferente\n"))
+
+    print(f"El número A es {num1}")
+
+    num2 = int(input("Ingresa el número B:\n"))
+
+    while num2 == 0:
+        num2 = int(input(f"{num2} no es una opción válida. Escoge un número diferente\n"))
+
+    while opcion == 0:
+        print("Escoge un número diferente a 0")
+
+    if opcion == 1:
+        resultado = math.sqrt(num1 + num2)
+        print(f"El resultado de a raíz cuadrada de la suma entre {num1} y {num2} es {resultado}")
+
+    elif opcion == 2:
+        resultado = num1 / num2
+        print(f"El resultado de dividir {num1} entre {num2} es igual a {resultado}")
+    else:
+        resultado = (num1 * num2) / 2.5
+        print(f"El resultado de multiplicar {num1} por {num2} y dividirlo entre 2.5 es igual a {resultado}")
 
 
-print("Ahora vamos a ingresar los números para operar: ")
-num1 = int(input("Ingresa el número A:\n"))
 
-while num1 == 0:
-    num1 = int(input(f"{num1} no es una opción válida. Escoge un número diferente\n"))
-
-print(f"El número A es {num1}")
-
-num2 = int(input("Ingresa el número B:\n"))
-
-while num2 == 0:
-    num2 = int(input(f"{num2} no es una opción válida. Escoge un número diferente\n"))
-
-while opcion == 0:
-    print("Escoge un número diferente a 0")
+else:
+    print("Calculadora apagada")
 
